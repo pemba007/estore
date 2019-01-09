@@ -1,3 +1,10 @@
+<?php 
+    session_start();
+?>
+
+<?php
+    include("include/connect.php");
+?>
 <!doctype html>
 <html lang="en">
 
@@ -111,7 +118,7 @@
         <h1 class="t_title">Trending in our shop</h1>
 
         <div class="row">
-            <div class="col-md-3">
+            <!-- <div class="col-md-3">
                 <h4>LG Washing Machine</h4>
                 <img src="images/washing machine.jpg" class="img-thumbnail">
                 <div class="shop-content">
@@ -140,7 +147,26 @@
                 <div class="shop-content">
                     <h4>Shop Now <a class=" buy" href="shop.php"> <i class="fa fa-angle-right"></i></a></h4>
                 </div>
+            </div> -->
+            <?php
+                $q = "select * from tbl_product";
+                $query = mysqli_query($con, $q);
+                if(mysqli_num_rows($query) > 0){
+                    while($row = mysqli_fetch_array($query)){
+                    ?>
+            <div class="col-md-3">
+                <h4>
+                    <?php echo $row["product_name"]; ?>
+                </h4>
+                <img src="./images/<?php echo $row["product_image"]; ?>" class="img-thumbnail">
+                <div class="shop-content">
+                    <h4>Shop Now <a class=" buy" href="shop.php?id=<?php echo $row["product_id"] ?>"> <i class="fa fa-angle-right"></i></a></h4>
+                </div>
             </div>
+            <?php
+                }
+               }
+            ?>
         </div>
         <hr />
         <div class="container-fluid text-center">

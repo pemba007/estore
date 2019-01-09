@@ -35,6 +35,7 @@ if(isset($_POST["add_to_cart"]))
 			'item_quantity'		=>	$_POST["quantity"]
 		);
 		$_SESSION["shopping_cart"][0] = $item_array;
+		echo '<script>console.log('.$item_array.')</script>';
 		echo '<script>alert("Item Added")</script>';
 	}
 }
@@ -101,51 +102,61 @@ if(isset($_GET["action"]))
 </header>
 
 <body>
-		<div class="container">
-			
-			<?php
-				$q = "select * from tbl_product ";
+    <div class="container">
+
+        <?php
+        		$item_id = $_GET['id'];
+        		echo "<script>console.log(".$item_id.")</script>";
+				$q = "select * from tbl_product where product_id = ".$item_id;
+				// echo "<script>console.log(".$q.")</script>";
            		$query = mysqli_query($con,$q);
 				if(mysqli_num_rows($query) > 0)
 				{
 					while($row = mysqli_fetch_array($query))
 					{
 				?>
-			<div class="col-md-3">
-				<form method="post" action="">
-					<div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px;" align="center">
-						<img src="images/<?php echo $row["product_image"]; ?>" class="img-responsive"style="width: 100%; height:225px"/><br />
-					
-						<h4 class="p_title"><?php echo $row["product_name"]; ?></h4>
+        <div class="col-md-3">
+            <form method="post" action="">
+                <div style="border:1px solid #333; background-color:#f1f1f1; border-radius:5px; padding:16px;" align="center">
+                    <img src="./images/<?php echo $row[" product_image"]; ?>" class="img-responsive"style="width: 100%; height:225px"/><br />
 
-						<h4 class="p_price">Rs. <?php echo $row["product_price"]; ?></h4>
+                    <h4 class="p_title">
+                        <?php echo $row["product_name"]; ?>
+                    </h4>
 
-						<h4 class="p_desc"><?php echo $row["product_description"]; ?></h4>
+                    <h4 class="p_price">Rs.
+                        <?php echo $row["product_price"]; ?>
+                    </h4>
 
-						<input type="hidden" value="1" name="id" />
+                    <h4 class="p_desc">
+                        <?php echo $row["product_description"]; ?>
+                    </h4>
 
-						<input type="text" name="quantity" value="1" class="form-control" />
+                    <input type="hidden" value="1" name="id" />
 
-						<input type="hidden" name="hidden_name" value="<?php echo $row["product_name"]; ?>" />
+                    <input type="text" name="quantity" value="1" class="form-control" />
 
-						<input type="hidden" name="hidden_price" value="<?php echo $row["product_price"]; ?>" />
+                    <input type="hidden" name="hidden_name" value="<?php echo $row["product_name"]; ?>" />
 
-						<input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Add to Cart" />
+                    <input type="hidden" name="hidden_price" value="<?php echo $row["product_price"]; ?>" />
 
-					</div>
-				</form>
-			</div>
-		
-			<?php
+                    <input type="submit" name="add_to_cart" style="margin-top:5px;" class="btn btn-success" value="Add to Cart" />
+
+                </div>
+            </form>
+        </div>
+
+        <?php
 					}
 				}
 			?>
-			
-			
-	</div>
-	
-	</body>
-     <br></br> <a href="order_details.php" class="btn btn-success insert-btn">View Order Details</a>
+
+
+    </div>
+
+</body>
+<br></br> <a href="order_details.php" class="btn btn-success insert-btn">View Order Details</a>
+
 </html>
 
 <?php

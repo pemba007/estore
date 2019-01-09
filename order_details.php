@@ -68,6 +68,11 @@
                         $total = 0;
                         foreach($_SESSION["shopping_cart"] as $keys => $values)
                         {
+                            // echo "<script>console.log()</script>";
+                            // echo "<script>console.log(".$values['item_name'].")</script>";
+                            // echo "<script>console.log(".$values['item_quantity'].")</script>";
+                            echo "<script>console.log(".$values['item_id'].")</script>";
+
                     ?>
             <tr>
                 <td>
@@ -85,7 +90,7 @@
                 <td><a href="index.php?action=delete&id=<?php echo $values[" item_id"]; ?>"><span class="text-danger">Remove</span></a></td>
             </tr>
             <?php
-                            $total = $total + ($values["item_quantity"] * $values["item_price"]);
+                            $total = $total + ((int)$values["item_quantity"] * (int)$values["item_price"]);
                         }
                     ?>
             <tr>
