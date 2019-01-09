@@ -1,0 +1,121 @@
+header {
+    width: 100% background-size:cover;
+    background-position: center;
+    min-height: 50px;
+    background-color: #ea1b25;
+    color: white;
+    background-attachment: fixed;
+}
+
+.logo_title {
+    color: #ea1b25;
+    text-align: left;
+}
+
+.category {
+    color: #fff;
+    background-color: #ea1b25;
+    text-align: center;
+    border-radius: 10px 10px 0px 0px;
+    height: 50px;
+    padding-top: 5px;
+}
+
+.search_box {
+    width: 100%;
+    margin: 5%;
+}
+
+.icon-bar {
+    background-color: #fff;
+}
+
+.navbar-nav a {
+    color: #fff;
+}
+
+.navbar-change {
+    background-color: #ea1b25;
+}
+
+.mybtn {
+    background-color: #ea1b25;
+    color: #fff;
+}
+
+.t_title {
+    color: #ea1b25;
+    text-align: center;
+}
+
+.d_title {
+    text-align: center;
+}
+
+.footer {
+    background-color: #ea1b25;
+    color: #fff;
+    height: 200px;
+    width: 100%;
+    float: left;
+}
+
+.footer a {
+    color: #fff;
+}
+
+.footer1 {
+    background-color: #990000;
+    color: #fff;
+}
+
+.footer1 a {
+    color: #fff;
+}
+
+.subscribe {
+    background-color: #990000;
+    color: #fff;
+    height: 35px;
+    width: 150px;
+    text-align: center;
+}
+
+.email {
+    height: 35px;
+    width: 400px;
+}
+
+.buy {
+    border-radius: 80%;
+    height: 20px;
+    width: 20px;
+    background-color: #ea1b25;
+    color: #fff;
+    padding-top: 2px;
+    font-size: 15px;
+    float: right;
+}
+.shop_content{
+    display:flex;
+    justify-content: flex-end;
+}
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.register{
+    height: 444px;
+    margin-top: 100px;
+    width: 100px;
+    margin: 115px auto 0px;
+   
+}

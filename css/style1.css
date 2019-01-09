@@ -1,0 +1,93 @@
+body {
+    background: white;
+    margin: 0px;
+    border: 0px;
+}
+
+#header {
+    width: auto;
+    height: 110px;
+    background: black;
+    color: white;
+}
+
+#sidemenu {
+    background: black;
+    color: white;
+}
+
+#data {
+    width: auto;
+    background: #2c3e50;
+    color: white;
+    padding-left: 330px;
+}
+
+#head_img {
+    background: white;
+    border-radius: 50px;
+}
+
+#sidemenu.ul li {
+    display: inline-block;
+    padding-bottom: 10px;
+    list-style: none;
+
+}
+
+li {
+    padding-bottom: 30px;
+    border-bottom: 3px white;
+}
+
+li:hover {
+    background: black;
+    color: white;
+    padding-left: 10px;
+    -moz-transition: padding-left .3s ease-in;
+    -o-transition: padding-left .3s ease-in;
+    -webkit-transition: padding-left .3s ease-in;
+    transition: padding-left .3s ease-in;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+ul li {
+    list-style: none;
+    border-bottom: 4px solid grey;
+}
+
+.dashboard-nav {
+    background-color: #000;
+    margin-right: -23px;
+    box-shadow: 0px 2px 8px rgba(0,0,0.2);
+    border-bottom: 2px solid #fff;
+}
+
+.dashboard-row #sidemenu li {
+    padding: 15px 20px;
+}
+
+.dashboard-row #sidemenu li a {
+    color: #fff !important;
+}
+
+.content-panel {
+    height: 540px;
+    overflow-y: scroll;
+}
+
+/*.dashboard-body {
+    overflow: hidden;
+}*/
+
+
+
+
+.topnav h3 {
+    padding: 20px 0px;
+    background-color:#000;
+}
